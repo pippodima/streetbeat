@@ -1,0 +1,49 @@
+/* The app's palette (app/lib/theme.dart): warm off-white or soft charcoal, white cards, one sage accent. */
+:root {
+  --page: #F5F4F0; --card: #FFFFFF; --text: #1F2421; --quiet: #66706A; --line: #E5E3DE;
+  --accent: #43775D; --wash: #DDEBE3; --on-wash: #1D3A2B;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #121413; --card: #1E211F; --text: #E9ECE9; --quiet: #A0A7A2; --line: #2B2F2D;
+    --accent: #9CCBB1; --wash: #263A30; --on-wash: #CDE6D7;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--page); color: var(--text);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); }
+header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+header nav { display: flex; gap: 20px; align-items: baseline; padding: 20px 0; }
+header nav a { color: var(--quiet); text-decoration: none; }
+header nav a.name { color: var(--text); font-weight: 600; font-size: 19px; margin-right: auto; }
+
+main { padding-bottom: 48px; }
+h1 { font-size: 34px; line-height: 1.15; font-weight: 600; margin: 24px 0 12px; }
+h2 { font-size: 22px; font-weight: 600; margin: 40px 0 8px; }
+h3 { font-size: 17px; font-weight: 600; margin: 0 0 6px; }
+ul { padding-left: 20px; }
+li { margin-bottom: 10px; }
+
+.hero { padding: 32px 0 8px; }
+.hero h1 { font-size: 44px; font-weight: 300; letter-spacing: -0.5px; }
+.lead { font-size: 19px; color: var(--quiet); }
+.soon {
+  display: inline-block; margin: 0; padding: 4px 12px; border-radius: 999px;
+  background: var(--wash); color: var(--on-wash); font-size: 14px;
+}
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 16px; }
+.card { background: var(--card); border-radius: 16px; padding: 16px 18px; }
+.card p { margin: 0; color: var(--quiet); font-size: 15px; }
+
+footer { border-top: 1px solid var(--line); padding-top: 16px; padding-bottom: 32px; color: var(--quiet); font-size: 14px; }
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 34px; }
+  h1 { font-size: 28px; }
+}
